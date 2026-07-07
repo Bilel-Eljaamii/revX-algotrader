@@ -17,7 +17,7 @@ struct Args {
 
 #[tokio::main]
 async fn main() -> Result<()> {
-    tracing_subscriber::fmt().with_max_level(Level::INFO).init();
+    tracing_subscriber::fmt().json().with_max_level(Level::INFO).init();
 
     let args = Args::parse();
     info!("Starting Dummy Bot (dry_run={})", args.dry_run);

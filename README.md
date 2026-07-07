@@ -347,7 +347,7 @@ struct Args {
 
 #[tokio::main]
 async fn main() -> Result<()> {
-    tracing_subscriber::fmt().with_max_level(Level::INFO).init();
+    tracing_subscriber::fmt().json()with_max_level(Level::INFO).init();
 
     let args = Args::parse();
     let config = Ema14Config::load()?;
