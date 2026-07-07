@@ -1,3 +1,8 @@
+<!-- Generated with Lumo AI - https://lumo.proton.me -->
+<p align="center">
+  <img src="./assets/banner.png" alt="Algorithmic Trading Banner" width="100%" height="auto">
+</p>
+
 # revX-algotrader
 
 **The open-source algorithmic trading core for the [Revolut X](https://revolutx.com) exchange.**
