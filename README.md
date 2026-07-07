@@ -1,9 +1,21 @@
-<!-- Generated with Lumo AI - https://lumo.proton.me -->
+# revX-algotrader
+
 <p align="center">
-  <img src="./assets/banner.png" alt="Algorithmic Trading Banner" width="100%" height="auto">
+  <a href="https://github.com/bilel/revX-algotrader/stargazers"><img src="https://img.shields.io/github/stars/bilel/revX-algotrader?style=for-the-badge&color=f5a623&logo=github" alt="Stars"></a>
+  <a href="https://github.com/bilel/revX-algotrader/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue?style=for-the-badge" alt="License"></a>
+  <img src="https://img.shields.io/badge/rust-2021_edition-orange?style=for-the-badge&logo=rust" alt="Rust 2021">
+  <img src="https://img.shields.io/badge/build-passing-brightgreen?style=for-the-badge&logo=githubactions&logoColor=white" alt="Build">
+  <img src="https://img.shields.io/badge/coverage-70%25+-success?style=for-the-badge&logo=codecov" alt="Coverage">
+  <img src="https://img.shields.io/badge/platform-linux%20%7C%20RPi-lightgrey?style=for-the-badge&logo=linux" alt="Platform">
+  <img src="https://img.shields.io/badge/dry--run-safe-9cf?style=for-the-badge" alt="Dry-run safe">
 </p>
 
-# revX-algotrader
+<p align="center">
+<!-- Generated with Lumo AI - https://lumo.proton.me -->
+  <img src="assets/banner.png" alt="Algorithmic Trading Banner" width="100%" height="auto">
+  *Banner generated with [Lumo AI](https://lumo.proton.me)*
+</p>
+<div align="center">
 
 **The open-source algorithmic trading core for the [Revolut X](https://revolutx.com) exchange.**
 
