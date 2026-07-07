@@ -15,7 +15,6 @@
   <img src="assets/banner.png" alt="Algorithmic Trading Banner" width="100%" height="auto">
   *Banner generated with [Lumo AI](https://lumo.proton.me)*
 </p>
-<div align="center">
 
 **The open-source algorithmic trading core for the [Revolut X](https://revolutx.com) exchange.**
 
