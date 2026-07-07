@@ -13,9 +13,8 @@
 <p align="center">
 <!-- Generated with Lumo AI - https://lumo.proton.me -->
   <img src="assets/banner.png" alt="Algorithmic Trading Banner" width="auto" height="auto">
+<i> Banner generated with <a href="https://lumo.proton.me">Lumo AI</a> </i>
 </p>
-
-**Banner generated with [Lumo AI](https://lumo.proton.me)**
 
 **The open-source algorithmic trading core for the [Revolut X](https://revolutx.com) exchange.**
 
