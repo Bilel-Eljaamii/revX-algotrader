@@ -1,0 +1,13 @@
+{
+  "name": "revX-algotrader",
+  "private": true,
+  "scripts": {
+    "format": "npm run format:frontend && npm run format:backend",
+    "format:frontend": "cd frontend && npm run format",
+    "format:backend": "cd backend && make fmt",
+    "format:all": "prettier --write \".\""
+  },
+  "devDependencies": {
+    "prettier": "^3.8.3"
+  }
+}

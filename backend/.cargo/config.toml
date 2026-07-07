@@ -1,0 +1,23 @@
+[build]
+rustc-wrapper = "sccache"
+
+[env]
+CC = "sccache cc"
+CXX = "sccache c++"
+
+# Use 'mold' for standard x86_64 builds (Arch Linux)
+[target.x86_64-unknown-linux-gnu]
+linker = "clang"
+rustflags = ["-C", "link-arg=-fuse-ld=mold"]
+
+# Configuration for your Pi 5 cross-compilation
+[target.aarch64-unknown-linux-gnu]
+# cargo build --target aarch64-unknown-linux-gnu --release
+# Linker settings (required for all aarch64 cross-builds)
+linker = "aarch64-linux-gnu-gcc"
+# If you have mold installed for aarch64, you can add it here too:
+# rustflags = ["-C", "link-arg=-fuse-ld=mold"]
+# Optional: optimizations specifically for Raspberry Pi 5 (Cortex-A76)
+# Uncomment the line below if you want to optimize specifically for RPi 5 performance, 
+# but note that the resulting binary won't run on older Pi models (like Pi 3).
+# rustflags = ["-C", "target-cpu=cortex-a76"]

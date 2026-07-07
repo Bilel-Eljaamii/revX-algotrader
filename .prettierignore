@@ -1,0 +1,41 @@
+# Dependencies
+node_modules
+target
+dist
+build
+.claude
+.clause-flow
+
+# Database files
+*.db
+*.db-shm
+*.db-wal
+
+# Configuration & Secrets
+.env
+.env.*
+secrets.json
+
+# Git
+.git
+
+# Logs
+*.log
+logs
+
+# Rust artifacts
+Cargo.lock
+target/
+
+# IDEs
+.vscode
+.idea
+.fleet
+.sublime-project
+
+# Binary files
+*.bin
+*.exe
+*.dll
+*.so
+*.dylib

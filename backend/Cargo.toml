@@ -1,0 +1,106 @@
+[package]
+name = "revX-algotrader"
+version = "0.8.0"
+edition = "2021"
+
+# Shared library — auth, client, models, db, proxy, config
+[lib]
+name = "revx_bot"
+path = "src/lib.rs"
+
+# Existing dummy binary
+[[bin]]
+name = "dummy"
+path = "src/bin/dummy.rs"
+
+# ---------------------------------------------------------------------------
+# Dependencies — latency-first choices
+# ---------------------------------------------------------------------------
+[dependencies]
+# Async runtime
+tokio = { version = "1.52.3", features = ["rt-multi-thread", "macros", "time", "signal"] }
+
+# HTTP client — pure-Rust TLS (rustls), persistent connection pool via hyper
+reqwest = { version = "0.12", default-features = false, features = [
+    "rustls-tls",
+    "json",
+    "http2",
+] }
+
+# JSON serialization / deserialization
+serde = { version = "1.0.228", features = ["derive"] }
+serde_json = "1.0.150"
+
+# Ed25519 signing (pure-Rust, ~50µs per sign)
+ed25519-dalek = { version = "2.2.0", features = ["pkcs8", "pem", "rand_core"] }
+
+# PEM / PKCS#8 parsing to extract raw key bytes
+pkcs8 = { version = "0.10", features = ["pem"] }
+
+# Base64 encoding for X-Revx-Signature header
+base64 = "0.22"
+
+# UUID v7 for client_order_id (time-sorted, monotonically increasing)
+uuid = { version = "1.23.1", features = ["v7"] }
+
+# Structured async-safe logging
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "fmt"] }
+
+# Lightweight HTTP server for the /proxy/historical-orders endpoint
+axum = { version = "0.8.0", features = ["tokio"] }
+tower = { version = "0.5", features = ["util"] }
+tower-http = { version = "0.7", features = ["cors", "trace"] }
+
+# SQLite for local trade history
+rusqlite = { version = "0.39", features = ["bundled"] }
+
+# Config loading & error handling
+thiserror = "2.0.18"
+anyhow = "1"
+
+# Strategy trait — async methods in traits
+async-trait = "0.1"
+
+# Command-line argument parsing
+clap = { version = "4.5", features = ["derive"] }
+
+# Futures combinators — join_all used in arb_engine
+futures = { version = "0.3", default-features = false, features = ["executor"] }
+
+# Platform directory resolution (home_dir)
+dirs = "6.0.0"
+
+# Graceful shutdown helpers
+tokio-util = { version = "0.7", features = ["rt"] }
+
+[dev-dependencies]
+# Mock HTTP server for integration tests
+wiremock = "0.6"
+tokio-test = "0.4"
+# Key generation for auth tests
+rand = { version = "0.10.1", features = ["sys_rng", "std"] }
+rand_core = "0.10.1"
+rcgen = "0.14.8"
+axum-server = { version = "0.8.0", features = ["tls-rustls"] }
+reqwest = { version = "0.12", features = ["rustls-tls", "json"] }
+rustls = { version = "0.23.40", features = ["aws-lc-rs"] }
+serial_test = "3"
+tempfile = "3.27.0"
+
+# Keeps local code fast, but allows sccache to cache external crates
+[profile.dev.package."*"]
+incremental = false
+
+[profile.test.package."*"]
+incremental = false
+
+# ---------------------------------------------------------------------------
+# Release profile — maximum binary performance
+# ---------------------------------------------------------------------------
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true
