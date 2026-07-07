@@ -12,7 +12,7 @@
 
 <p align="center">
 <!-- Generated with Lumo AI - https://lumo.proton.me -->
-  <img src="assets/banner.png" alt="Algorithmic Trading Banner" width="100%" height="auto">
+  <img src="assets/banner.png" alt="Algorithmic Trading Banner" width="auto" height="auto">
 </p>
 
 **Banner generated with [Lumo AI](https://lumo.proton.me)**
