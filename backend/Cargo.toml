@@ -45,7 +45,7 @@ uuid = { version = "1.23.1", features = ["v7"] }
 
 # Structured async-safe logging
 tracing = "0.1"
-tracing-subscriber = { version = "0.3", features = ["env-filter", "fmt"] }
+tracing-subscriber = { version = "0.3", features = ["env-filter", "fmt", "json"] }
 
 # Lightweight HTTP server for the /proxy/historical-orders endpoint
 axum = { version = "0.8.0", features = ["tokio"] }
