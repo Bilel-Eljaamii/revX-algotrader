@@ -115,7 +115,7 @@ Desktop.ini
 # Project Specific
 # ------------------------------------------------------------------------------
 backend/target/*
-backend/scratch/*
+# backend/scratch/*
 backend/node_modules/*
 backend/organize.py
 frontend/node_modules/*
